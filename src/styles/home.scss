@@ -34,6 +34,7 @@ header-nav {
     font-size: 4em;
     line-height: 1;
     position: fixed;
+    z-index: 1;
 
 	.header-content {
 		padding: 10px;
@@ -123,7 +124,7 @@ create-post {
 	form {
 		display: flex;
 		flex-direction: row;
-		justify-content: left;
+		justify-content: center;
 
 		.inputs-container {
 			display: flex;
@@ -223,7 +224,7 @@ create-post {
 	align-items: center;
 
 	min-width: 300px;
-	width: 30vw;
+	// width: 30vw;
 	margin: 10px;
 	border-radius: 10px 14px 10px 14px;
 	-moz-border-radius: 10px 14px 10px 14px;
