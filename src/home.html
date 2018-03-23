@@ -1,0 +1,14 @@
+<div class="home-container" ng-controller="homeController">
+    <div class="search-container">
+    	<input 
+    		type="text" 
+    		ng-model="search"
+    		placeholder="Search" 
+    		class="search">
+    </div>
+    <create-post 
+    	add-new-post="addNewPost(newpost)"></create-post>
+    <posts 
+    	allposts="$resolve.posts"
+    	search="search"></posts>
+</div>

@@ -1,0 +1,89 @@
+<button 
+	class="accordion"
+	ng-class="{'active': $ctrl.showInputs}">
+		Create Post
+</button>
+<form
+	id="create-post-form" 
+	name="createPostForm"
+	class="panel"
+	ng-submit="$ctrl.createPost(createPostForm.$valid, createPostForm, $ctrl.post)"
+	novalidate
+	>
+
+	<div class="inputs-container">
+
+		<!-- Title -->
+		<span class="input input-title">
+			<input
+				type="text" 
+		  		id="input-title"
+				name="title"
+				placeholder="title"
+				autocomplete="off"
+				ng-model="$ctrl.post.title"
+				ng-maxlength="20"
+				required
+				>
+			<label 
+				for="input-title"
+				ng-class="{'validInputColor': createPostForm.title.$valid, 'invalidInputColor': createPostForm.title.$invalid}">
+				<span>
+					<p>{{$ctrl.post.title.length || 0}}/20</p>
+				</span>
+			</label>
+		</span>
+
+		<!-- Body -->
+		<span class="input input-body">
+			<textarea
+				rows="5"
+				type="text" 
+		  		id="input-body"
+				name="body"
+				placeholder="body"
+				autocomplete="off"
+		  		class=""
+				ng-model="$ctrl.post.body"
+				ng-maxlength="500"
+				required
+				> </textarea>
+			<label 
+				class=""
+				for="input-body"
+				ng-class="{'validInputColor': createPostForm.body.$valid, 'invalidInputColor': createPostForm.body.$invalid}">
+				<span>
+					<p>{{$ctrl.post.body.length || 0}}/500</p>
+				</span>
+			</label>
+		</span>
+
+		<!-- Submit -->
+		<span
+		  	ng-class="{'disabled-button': createPostForm.$invalid, 'enabled-button': createPostForm.$valid}" 
+	  		class="submit-button">
+		  	<input 
+		  		ng-disabled="createPostForm.$invalid || createPostForm.$submitted" 
+		  		type="submit" 
+		  		id="submit"
+		  		ng-value="$ctrl.submitButtonValue" />
+  		</span>
+  	</div>
+
+</form>
+<script>
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+	  acc[i].addEventListener("click", function() {
+	    var panel = this.nextElementSibling;
+	  	console.log(panel, panel.style.maxHeight)
+	    if (panel.style.maxHeight){
+	      panel.style.maxHeight = null;
+	    } else {
+	      panel.style.maxHeight = panel.scrollHeight + "px";
+	    } 
+	  });
+	}
+</script>

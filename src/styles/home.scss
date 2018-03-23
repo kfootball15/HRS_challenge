@@ -1,0 +1,289 @@
+$color-primary-text: #fff;
+$color-primary-background: #a77dc2;
+$color-secondary-outlines: #1d1d1d;
+$color-body-text: #8f8f8f;
+$color-body-background: #fff;
+
+$color-valid: #53ff53;
+$color-invalid: #f73030;
+
+body {
+	background: $color-primary-background;
+	font-size: 16px;
+    font-family: Gibson,Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+	color: $color-primary-text;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+textarea { 
+	border-style: none; 
+	border-color: Transparent; 
+	overflow: auto;        
+}
+
+header-nav {
+	background: $color-primary-background;
+  	-webkit-box-shadow: 0 4px 6px -6px $color-secondary-outlines;
+  	-moz-box-shadow: 0 4px 6px -6px $color-secondary-outlines;
+  	box-shadow: 0 4px 6px -6px $color-secondary-outlines;
+	width: 100%;
+    font-size: 4em;
+    line-height: 1;
+    position: fixed;
+
+	.header-content {
+		padding: 10px;
+		margin-left: 40px;
+
+		.header-title {
+			
+		}
+	}
+}
+
+.search-container {
+	input {
+		width: 100%;
+	    height: 50px;
+	    line-height: 50px;
+	    font-size: 2em;
+	    margin: 10px;
+	    padding: 0 20px;
+	}
+}
+
+.home-container {
+	padding: 100px 50px;
+
+	posts {
+		width: 100%;
+
+		.posts-container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+
+
+			.post{
+				min-width: 300px;
+				width: 30vw;
+				margin: 5px;
+				border-radius: 10px 14px 10px 14px;
+				-moz-border-radius: 10px 14px 10px 14px;
+				-webkit-border-radius: 10px 14px 10px 14px;
+				border: 0px solid #000000;
+				display:flex;
+				flex-direction: column;
+				justify-content: space-between;
+				-webkit-box-shadow: 0px 0px 25px -3px rgba(121,89,143,1);
+				-moz-box-shadow: 0px 0px 25px -3px rgba(121,89,143,1);
+				box-shadow: 0px 0px 25px -3px rgba(121,89,143,1);
+
+				.post-title, .post-footer{
+					border-radius: 10px 14px 0 0;
+					-moz-border-radius: 10px 14px 0 0;
+					-webkit-border-radius: 10px 14px 0 0;
+					padding: 10px;
+					position: relative;
+					font-size: 1em;
+					color: $color-body-text;
+					background: $color-body-background;
+
+				}
+				.post-body{
+					padding: 5px 30px;
+
+				}
+				.post-footer {
+					padding: 5px;
+					border-radius: 50px;
+					text-align: right;
+					width: 33px;
+					align-self: flex-end;
+					display: flex;
+					justify-content: center;
+					margin: 5px;
+
+				}
+			}
+		}
+	}
+}
+
+create-post {
+
+	button {
+		width: 100%;
+	}
+	form {
+		display: flex;
+		flex-direction: row;
+		justify-content: left;
+
+		.inputs-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			min-width: 300px;
+			width: 30vw;
+			margin: 5px;
+			border-radius: 10px 14px 10px 14px;
+			-moz-border-radius: 10px 14px 10px 14px;
+			-webkit-border-radius: 10px 14px 10px 14px;
+			border: 0px solid #000000;
+			-webkit-box-shadow: 0px 0px 25px -3px rgba(121,89,143,1);
+			-moz-box-shadow: 0px 0px 25px -3px rgba(121,89,143,1);
+			box-shadow: 0px 0px 25px -3px rgba(121,89,143,1);
+			
+			span.submit-button {
+				// padding: 5px;
+
+				// text-align: right;
+				// width: 33px;
+				// align-self: flex-end;
+				display: flex;
+				justify-content: center;
+				margin-top: -34px;
+				input{
+					cursor: pointer;
+				border-radius: 50px;
+				}
+				// margin: 5px;
+			}
+			span.input {
+				width: 100%;
+
+				&.input-title{
+					border-radius: 10px 14px 0 0;
+					-moz-border-radius: 10px 14px 0 0;
+					-webkit-border-radius: 10px 14px 0 0;
+					padding: 10px;
+					position: relative;
+					font-size: 1em;
+					color: $color-body-text;
+					background: $color-body-background;
+					
+					input {
+						width: 100%;
+						border: none;
+						color: $color-body-text;
+					}
+				}
+				&.input-body{
+					textarea {
+						resize: none;
+						background-color:$color-primary-background;
+						width: 100%;
+						color: white;
+						font-family: inherit;
+						padding: 5px 30px;
+
+						&::placeholder {
+							color: white;
+						}
+					}
+					
+				}
+				label {
+					margin: 0;
+
+					p {
+						margin: 0;
+					}
+				}
+				.validInputColor {
+					color: $color-valid;
+				}
+				.invalidInputColor {
+					color: $color-invalid;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+	min-width: 300px;
+	width: 30vw;
+	margin: 10px;
+	border-radius: 10px 14px 10px 14px;
+	-moz-border-radius: 10px 14px 10px 14px;
+	-webkit-border-radius: 10px 14px 10px 14px;
+	border: 0px solid #000000;
+	-webkit-box-shadow: 0px 0px 25px -3px rgba(121,89,143,1);
+	-moz-box-shadow: 0px 0px 25px -3px rgba(121,89,143,1);
+	box-shadow: 0px 0px 25px -3px rgba(121,89,143,1);
+					
+	font-size: 1em;
+	color: $color-body-text;
+	background: $color-body-background;
+
+    cursor: pointer;
+    padding: 18px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+	border-radius: 0px 0px 0 0;
+	-moz-border-radius: 0px 0px 0 0;
+	-webkit-border-radius: 0px 0px 0 0;
+}
+
+.panel {
+    margin: 5px;
+    background-color: $color-primary-background;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: '\2796'; /* Unicode character for "minus" sign (-) */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

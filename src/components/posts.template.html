@@ -1,0 +1,7 @@
+<div class="posts-container">
+	<div class="post" ng-repeat="post in $ctrl.allposts | postSearch:$ctrl.search"> 
+		<h3 class="post-title"> {{post.title}} </h3>
+		<p class="post-body"> {{post.body}} </p>
+		<p class="post-footer"> {{post.id}} </p>
+	</div>
+</div>
